@@ -1,0 +1,26 @@
+<html lang="ru">
+  <head>
+    <title>index</title>
+  </head>
+  <body bgcolor="grey">
+    <h1>index.html</h1>
+    <p>{{sss}}</p>
+    {% for i in range(10) %}
+      {{sss}}
+    {% endfor %}
+    <p>
+    {% set fruit = 'apple' %}
+      {{fruit}}
+    </p>
+    <p>
+        {% set str=sss %}
+        {% if str==sss %}
+          <p>!!!!!!!</p>
+        {% else %}
+          <p>???????</p>
+        {% endif %}
+    </p>
+    <img src="/static/flask.png">
+
+  </body>
+</html>

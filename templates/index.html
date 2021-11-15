@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 align="center">Список заявок</h1>
+<div align="center">
+<a href="/admin/Все">Все</a>
+<a href="/admin/открыт">Открыты</a>
+<a href="/admin/закрыт">Заткрыты</a>
+</div>
+<div align="center">
+<table border="1" width="90%" cellpadding="5" cellspacing="5">
+    <col width="1%" valign="top">
+    <col width="2%" valign="top">
+    <col width="10%" valign="top">
+    <col width="15%" valign="top">
+    <col width="50%" valign="top">
+        <tr align="center">
+            <td><b>id</b></td>
+            <td><b>Автор</b></td>
+            <td><b>Дата</b></td>
+            <td><b>Тема</b></td>
+            <td><b>Содержание обращения</b></td>
+            <td><b>Прикрепленный файл</b></td>
+            <td><b>Статус</b></td>
+        </tr>
+        {% for i in topic_table %}
+        <tr {% if i.status=='закрыт' %} bgcolor="#faa5a5" {% endif %}>
+            <td><a href="/talk/{{i.ID}}">{{i.ID}}</a></td>
+            <td><a href="/talk/{{i.ID}}">{{i.author}}</a></td>
+            <td><a href="/talk/{{i.ID}}">{{i.date_time}}</a></td>
+            <td><a href="/talk/{{i.ID}}">{{i.title}}</a></td>
+            <td><a href="/talk/{{i.ID}}">{{i.body_text}}</a></td>
+            <!--<td><a href="{{i.file_name}}">{{i.file_name}}</a></td>-->
+            <td>{% if i.file_name != "нет" %}<a href="{{i.file_name}}"><b>Файл прикреплен</b></a>{% endif %}</td>
+            <td><a href="/talk/{{i.ID}}">{{i.status}}</a></td>
+        </tr>
+        {% endfor %}
+</table>
+</div>
+
+</body>
+</html>

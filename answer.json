@@ -1,0 +1,52 @@
+{
+  "update_id": 163951425,
+  "message": {
+    "message_id": 2616,
+    "from": {
+      "id": 1292677678,
+      "is_bot": false,
+      "first_name": "Marat",
+      "last_name": "Gareev",
+      "username": "Maratgareev97",
+      "language_code": "ru"
+    },
+    "chat": {
+      "id": 1292677678,
+      "first_name": "Marat",
+      "last_name": "Gareev",
+      "username": "Maratgareev97",
+      "type": "private"
+    },
+    "date": 1636209155,
+    "photo": [
+      {
+        "file_id": "AgACAgIAAxkBAAIKOGGGkgMOxSwYa3nxOHZuTueIqb2sAAKctzEbgHMwSG71I-UQkDihAQADAgADcwADIgQ",
+        "file_unique_id": "AQADnLcxG4BzMEh4",
+        "file_size": 1771,
+        "width": 72,
+        "height": 90
+      },
+      {
+        "file_id": "AgACAgIAAxkBAAIKOGGGkgMOxSwYa3nxOHZuTueIqb2sAAKctzEbgHMwSG71I-UQkDihAQADAgADbQADIgQ",
+        "file_unique_id": "AQADnLcxG4BzMEhy",
+        "file_size": 21995,
+        "width": 256,
+        "height": 320
+      },
+      {
+        "file_id": "AgACAgIAAxkBAAIKOGGGkgMOxSwYa3nxOHZuTueIqb2sAAKctzEbgHMwSG71I-UQkDihAQADAgADeAADIgQ",
+        "file_unique_id": "AQADnLcxG4BzMEh9",
+        "file_size": 69631,
+        "width": 640,
+        "height": 800
+      },
+      {
+        "file_id": "AgACAgIAAxkBAAIKOGGGkgMOxSwYa3nxOHZuTueIqb2sAAKctzEbgHMwSG71I-UQkDihAQADAgADeQADIgQ",
+        "file_unique_id": "AQADnLcxG4BzMEh-",
+        "file_size": 90613,
+        "width": 1024,
+        "height": 1280
+      }
+    ]
+  }
+}

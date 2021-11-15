@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Title</title>
+</head>
+<body
+    {% if where_name==4 %}
+    bgcolor="#c5ebdd"
+    {% else %}
+    bgcolor="#FA8072"
+    {% endif %}>
+    Выбраны из топика №<b>{{text}}</b><a href="http://127.0.0.1:5000/admin/Все">назад</a><br>
+    {% if where_name==4 %}
+    <font color="green" size="5">Открыт</font>
+    {% else %}
+    <font color="red" size="5">Закрыт</font>
+    {% endif %}
+    <div align="center">
+    <table  border-collapse="separate" border-spacing="5px" background="#ECE9E0" color="#656665" border="1px solid #ECE9E0" border-radius="20px">
+            <tr align="center">
+                <td><b>id</b></td>
+                <td><b>Номер топика</b></td>
+                <td><b>Автор</b></td>
+                <td><b>Время публикации</b></td>
+                <td><b>Содержание ответа</b></td>
+                <td><b>Файл</b></td>
+            </tr>
+            {% for i in talk_table %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.topic_id}}</td>
+                <td>{{i.author}}</td>
+                <td>{{i.date_time}}</td>
+                <td>{{i.answer}}</td>
+                <td>{% if i.file_name != "" %}<a href="{{i.file_name}}"><b>Файл прикреплен</b></a>{% endif %}</td>
+
+            </tr>
+            {% endfor %}
+    </table>
+    <br>
+    <form action="/send_answer" method="POST" enctype="multipart/form-data"> <!-- enctype="multipart/form-data" нужно для отправки файла-->
+        <textarea cols="60" rows="10" placeholder="Введите ответ" name="answer"></textarea>
+        <input type="hidden" value="{{text}}" name="topic_id">
+        <p><input type="file" name="file"></p>
+        <input type="submit" value="Отправить"></p>
+    </form>
+        <hr>
+        <b>Закрыть топик!</b><br>
+        <form id="form1" action="/close_topic1" method="POST">
+            <input type="text" value="" name="password_close"><br>
+            <img src="{{ url_for('static', filename='close1.png') }}" width="5%" alt="Закрыть топик" onclick="parentNode.submit();">
+            <input type="hidden" name="img" value="адрес фото"/>
+            <input type="hidden" value="{{text}}" name="topic_id">
+        </form>
+        <!--<a href="http://127.0.0.1:5000/"><img src="{{ url_for('static', filename='close1.png') }}" width=5%></a>-->
+
+    </div>
+</body>
+</html>
